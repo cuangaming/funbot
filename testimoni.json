@@ -1,32 +1,126 @@
 [
-  {"nama":"Yurryansyah","komen":"Pelayanan fast respon, ramah pokoknya terbestttt rekomended bgt"},
-  {"nama":"G Permana P","komen":"Mantap dan terpercaya"},
-  {"nama":"Rio SQuare Man","komen":"Fast respon sat set sudah langganan terima kasih...."},
-  {"nama":"Elaine","komen":"Best and fast ldc seller, aman cepat dan terpercaya 😘"},
-  {"nama":"Derick Lie","komen":"Mantap si ceceh ini"},
-  {"nama":"Saddies Buddies","komen":"Efek pelayanan yg baik pasti bakal jadi hal yg baik pula wkwk, mantap sih fast respon dan klo ada masalah sama Ldc kek nge bug dan sebagainya nya di bantuin sampe kelar dan yg terutama ada promo Mulu wkwk"},
-  {"nama":"Yoko Febrian","komen":"fast resp + fast process ty kak dr pertama beli udh ga ribet dan saya ga butuh mm langsung trans aja rec+"},
-  {"nama":"Suparman Aritonang","komen":"Trusted banget"},
-  {"nama":"Andre Chandra","komen":"Recomended"},
-  {"nama":"Alche","komen":"Up up"},
-  {"nama":"Gregorius Parama","komen":"recommended 👍👍"},
-  {"nama":"Johan Yulizar","komen":"rekomend dari Tommy Froditus, mantap uda 2x beli d sni"},
-  {"nama":"Ikhsan Handoyo","komen":"Ty aman, fast respon Udah jadi langganan kali ya Udah beli berkali\" di kak lid 😁🙏👍"},
-  {"nama":"Hari","komen":"Mantap fast respon banget Selalu di kasih info harga promo terbaru Recommended👍🏻"},
-  {"nama":"Yona Listyo","komen":"Terpercayaaa breee"},
-  {"nama":"Plain Walker","komen":"Transaksi disini sat set jadii. Mo beli baru mo renew mending disini aja. Proses cepet, harga masuk akal, dan yang pasti terpercayaa. Thank u kak"},
-  {"nama":"Tirta Sukmaningrat","komen":"cepat dan terpercaya , the best pokoke"},
-  {"nama":"Yoseph Stevanus","komen":"Terpercaya dahhhh ga usa ragu... Murah..."},
-  {"nama":"Rian Rifai","komen":"Recommended"},
-  {"nama":"Gandos Dosdos","komen":"reccomended+fast respon ga sampe 5mnit beres"},
-  {"nama":"Faizul Himam","komen":"Terworth it 👍"},
-  {"nama":"Putra Putri","komen":"Bagusnya jadi penjual jujur ya gini, ga perlu iklan lagi. Sudah di iklanin sendiri sama pelanggan. 👍"},
-  {"nama":"Gabriella Kartika Wijaya","komen":"Fast respon & prosesnya cepat, setelah transfer ga sampai 5 menit sudah slesai proses 😊"},
-  {"nama":"Luky Nur","komen":"fast respon, proses sat set, dan yg pasti terpecaya. recomended"},
-  {"nama":"Rachel Rachel","komen":"Selalu gercep, trusted and very recommended! Temen2ku semua juga langganan di cc lidwina. Luv bangetttt ❤️😍"},
-  {"nama":"Liks Abdulrahman","komen":"Di kirim list promo tiap bulan. Dan pasti tiap bulan ambil ga pake babibubebo transfer kirim bukti kirim id langsng jadi. RECOMMENDED BANGET . MAKASIH KAKA .."},
-  {"nama":"Kim Ha Kim","komen":"Sat set fast service"},
-  {"nama":"Papanya Baskara","komen":"ehh ada post saya 😁 intinya reccomended banget."},
-  {"nama":"Dodi Risyan Septiawan","komen":"recomended"},
-  {"nama":"Aulia Habibul Aziz","komen":"Dapat rekomendasi dari teman. Sudah 3x transaksi, Aman dan responnya cepat.. Proses transaksi ga sampe 5 menit meskipun mimin sellernya sambil sakit layaninnya. Semoga lekas sembuh dan lancar selalu bisnisnya.... Ditunggu order selanjutnya."}
+  {
+    "nama": "Yurryansyah",
+    "komen": "Pelayanan fast respon, ramah pokoknya terbestttt rekomended bgt"
+  },
+  {
+    "nama": "G Permana P",
+    "komen": "Mantap dan terpercaya"
+  },
+  {
+    "nama": "Rio SQuare Man",
+    "komen": "Fast respon sat set sudah langganan terima kasih...."
+  },
+  {
+    "nama": "Elaine",
+    "komen": "Best and fast ldc seller, aman cepat dan terpercaya 😘"
+  },
+  {
+    "nama": "Derick Lie",
+    "komen": "Mantap si ceceh ini"
+  },
+  {
+    "nama": "Saddies Buddies",
+    "komen": "Efek pelayanan yg baik pasti bakal jadi hal yg baik pula wkwk, mantap sih fast respon dan klo ada masalah sama Ldc kek nge bug dan sebagainya nya di bantuin sampe kelar dan yg terutama ada promo Mulu wkwk"
+  },
+  {
+    "nama": "Yoko Febrian",
+    "komen": "fast resp + fast process ty kak dr pertama beli udh ga ribet dan saya ga butuh mm langsung trans aja rec+"
+  },
+  {
+    "nama": "Suparman Aritonang",
+    "komen": "Trusted banget"
+  },
+  {
+    "nama": "Andre Chandra",
+    "komen": "Recomended"
+  },
+  {
+    "nama": "Alche",
+    "komen": "Up up"
+  },
+  {
+    "nama": "Gregorius Parama",
+    "komen": "recommended 👍👍"
+  },
+  {
+    "nama": "Johan Yulizar",
+    "komen": "rekomend dari Tommy Froditus, mantap uda 2x beli d sni"
+  },
+  {
+    "nama": "Ikhsan Handoyo",
+    "komen": "Ty aman, fast respon Udah jadi langganan kali ya Udah beli berkali\" di kak lid 😁🙏👍"
+  },
+  {
+    "nama": "Hari",
+    "komen": "Mantap fast respon banget Selalu di kasih info harga promo terbaru Recommended👍🏻"
+  },
+  {
+    "nama": "Yona Listyo",
+    "komen": "Terpercayaaa breee"
+  },
+  {
+    "nama": "Plain Walker",
+    "komen": "Transaksi disini sat set jadii. Mo beli baru mo renew mending disini aja. Proses cepet, harga masuk akal, dan yang pasti terpercayaa. Thank u kak"
+  },
+  {
+    "nama": "Tirta Sukmaningrat",
+    "komen": "cepat dan terpercaya , the best pokoke"
+  },
+  {
+    "nama": "Yoseph Stevanus",
+    "komen": "Terpercaya dahhhh ga usa ragu... Murah..."
+  },
+  {
+    "nama": "Rian Rifai",
+    "komen": "Recommended"
+  },
+  {
+    "nama": "Gandos Dosdos",
+    "komen": "reccomended+fast respon ga sampe 5mnit beres"
+  },
+  {
+    "nama": "Faizul Himam",
+    "komen": "Terworth it 👍"
+  },
+  {
+    "nama": "Putra Putri",
+    "komen": "Bagusnya jadi penjual jujur ya gini, ga perlu iklan lagi. Sudah di iklanin sendiri sama pelanggan. 👍"
+  },
+  {
+    "nama": "Gabriella Kartika Wijaya",
+    "komen": "Fast respon & prosesnya cepat, setelah transfer ga sampai 5 menit sudah slesai proses 😊"
+  },
+  {
+    "nama": "Luky Nur",
+    "komen": "fast respon, proses sat set, dan yg pasti terpecaya. recomended"
+  },
+  {
+    "nama": "Rachel Rachel",
+    "komen": "Selalu gercep, trusted and very recommended! Temen2ku semua juga langganan di cc lidwina. Luv bangetttt ❤️😍"
+  },
+  {
+    "nama": "Liks Abdulrahman",
+    "komen": "Di kirim list promo tiap bulan. Dan pasti tiap bulan ambil ga pake babibubebo transfer kirim bukti kirim id langsng jadi. RECOMMENDED BANGET . MAKASIH KAKA .."
+  },
+  {
+    "nama": "Kim Ha Kim",
+    "komen": "Sat set fast service"
+  },
+  {
+    "nama": "Papanya Baskara",
+    "komen": "ehh ada post saya 😁 intinya reccomended banget."
+  },
+  {
+    "nama": "Dodi Risyan Septiawan",
+    "komen": "recomended"
+  },
+  {
+    "nama": "Aulia Habibul Aziz",
+    "komen": "Dapat rekomendasi dari teman. Sudah 3x transaksi, Aman dan responnya cepat.. Proses transaksi ga sampe 5 menit meskipun mimin sellernya sambil sakit layaninnya. Semoga lekas sembuh dan lancar selalu bisnisnya.... Ditunggu order selanjutnya."
+  },
+  {
+    "nama": "Gandos Dosdos",
+    "komen": "\nreccomended+fast respon ga sampe 5mnit beres"
+  }
 ]
