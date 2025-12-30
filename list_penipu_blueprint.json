@@ -1,168 +1,48 @@
 {
   "project": {
-    "name": "List Penipu / Blacklist",
-    "description": "Sistem pencatatan dan pencarian laporan penipuan untuk website cuangaming",
-    "goal": [
-      "Menyediakan daftar penipu yang bisa dicari",
-      "Memberikan edukasi dan peringatan kepada user",
-      "Menyimpan bukti penipuan"
-    ]
+    "name": "List Penipu CuanGaming",
+    "type": "Blacklist System",
+    "responsive": true,
+    "status": "frontend-ready"
   },
 
-  "data_structure": {
-    "penipu": {
-      "id": "integer (auto increment)",
-      "nomor_hp": "string",
-      "rekening_atau_ewallet": "string",
-      "nama_akun": "string",
-      "nama_rekening": "string",
-      "kronologi": "text",
-      "foto_bukti": "string (path file)",
-      "status": "pending | verified",
-      "created_at": "timestamp"
-    }
+  "html_page": {
+    "filename": "list-penipu.html",
+    "description": "Halaman daftar penipu dengan search dan detail modal",
+    "content": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Daftar Penipu | CuanGaming</title>\n<style>\nbody{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#e5e7eb;padding:16px}\nh1{font-size:22px}\np{font-size:14px;color:#cbd5f5}\n.search-box{margin:16px 0}\n.search-box input{width:100%;padding:12px;border-radius:8px;border:none;font-size:14px}\n.table-wrapper{overflow-x:auto}\ntable{width:100%;border-collapse:collapse;background:#020617;min-width:700px}\nth,td{padding:10px;border-bottom:1px solid #1e293b;font-size:13px;text-align:left}\nth{color:#38bdf8}\ntr:hover{background:#020617cc;cursor:pointer}\n.badge{padding:4px 8px;border-radius:6px;font-size:11px}\n.verified{background:#16a34a;color:#fff}\n.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);justify-content:center;align-items:center;padding:16px}\n.modal-content{background:#020617;padding:16px;border-radius:10px;max-width:600px;width:100%;max-height:90vh;overflow:auto}\n.close{float:right;color:#f87171;cursor:pointer;font-size:18px}\nimg{max-width:100%;border-radius:8px;margin-top:10px}\n@media(max-width:768px){h1{font-size:18px}table{min-width:100%}th,td{font-size:12px;padding:8px}}\n</style>\n</head>\n<body>\n<h1>🚨 Daftar Penipu</h1>\n<p>Cek nomor HP, rekening, atau akun sebelum transaksi.</p>\n<div class=\"search-box\">\n<input type=\"text\" id=\"searchInput\" placeholder=\"Cari nomor HP, rekening, atau akun...\">\n</div>\n<div class=\"table-wrapper\">\n<table>\n<thead>\n<tr>\n<th>No</th>\n<th>Nomor HP</th>\n<th>Rekening / E-Wallet</th>\n<th>Nama Akun</th>\n<th>Nama Rekening</th>\n<th>Status</th>\n</tr>\n</thead>\n<tbody id=\"penipuList\">\n<tr onclick=\"openModal()\">\n<td>1</td>\n<td>08123456789</td>\n<td>BCA 123456789</td>\n<td>@penipu_judi</td>\n<td>ANDI</td>\n<td><span class=\"badge verified\">VERIFIED</span></td>\n</tr>\n</tbody>\n</table>\n</div>\n<div class=\"modal\" id=\"detailModal\">\n<div class=\"modal-content\">\n<span class=\"close\" onclick=\"closeModal()\">✖</span>\n<h3>Detail Laporan Penipuan</h3>\n<p><b>Nomor HP:</b> 08123456789</p>\n<p><b>Rekening:</b> BCA 123456789</p>\n<p><b>Nama Akun:</b> @penipu_judi</p>\n<p><b>Nama Rekening:</b> ANDI</p>\n<p><b>Kronologi:</b><br>Pelaku menawarkan akun VIP, setelah transfer langsung memblokir korban.</p>\n<img src=\"bukti.jpg\" alt=\"Bukti Penipuan\">\n</div>\n</div>\n<script>\ndocument.getElementById('searchInput').addEventListener('keyup',function(){let f=this.value.toLowerCase();document.querySelectorAll('#penipuList tr').forEach(r=>{r.style.display=r.innerText.toLowerCase().includes(f)?'':'none'})});\nfunction openModal(){document.getElementById('detailModal').style.display='flex'}\nfunction closeModal(){document.getElementById('detailModal').style.display='none'}\n</script>\n</body>\n</html>"
   },
 
-  "database": {
-    "mysql_table": {
-      "name": "penipu",
-      "sql": "CREATE TABLE penipu (id INT AUTO_INCREMENT PRIMARY KEY, nomor_hp VARCHAR(20), rekening VARCHAR(50), nama_akun VARCHAR(100), nama_rekening VARCHAR(100), kronologi TEXT, foto VARCHAR(255), status ENUM('pending','verified') DEFAULT 'pending', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
-    }
-  },
-
-  "pages": {
-    "list_page": {
-      "url": "/list-penipu",
-      "components": [
-        "search_input",
-        "table_list",
-        "detail_modal"
-      ]
-    },
-    "submit_page": {
-      "url": "/lapor-penipu",
-      "components": [
-        "submit_form",
-        "upload_foto"
-      ]
-    },
-    "admin_page": {
-      "url": "/admin/penipu",
-      "components": [
-        "table_pending",
-        "approve_button",
-        "delete_button"
-      ]
-    }
-  },
-
-  "frontend": {
-    "search_system": {
-      "type": "client-side",
-      "logic": "filter semua kolom berdasarkan input text",
-      "js_example": "Ambil input -> ubah lowercase -> cocokan ke text dalam setiap row"
-    },
-
-    "table_columns": [
-      "Nomor HP",
-      "Rekening / E-Wallet",
-      "Nama Akun",
-      "Nama Rekening",
-      "Kronologi (ringkas)",
-      "Bukti (thumbnail)"
-    ],
-
-    "modal_detail": {
-      "trigger": "klik row",
-      "content": [
-        "Nomor HP",
-        "Rekening / E-Wallet",
-        "Nama Akun",
-        "Nama Rekening",
-        "Kronologi lengkap",
-        "Foto bukti"
-      ]
-    }
-  },
-
-  "form_submit": {
-    "method": "POST",
-    "enctype": "multipart/form-data",
+  "database_structure": {
+    "table": "penipu",
     "fields": [
-      {
-        "name": "nomor_hp",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "rekening",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "nama_akun",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "nama_rekening",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "kronologi",
-        "type": "textarea",
-        "required": true
-      },
-      {
-        "name": "foto",
-        "type": "file",
-        "required": false
-      }
-    ],
-    "default_status": "pending"
-  },
-
-  "backend_flow": {
-    "submit_report": [
-      "User isi form",
-      "Validasi input",
-      "Upload foto ke folder /uploads",
-      "Simpan data ke database dengan status pending"
-    ],
-    "admin_verification": [
-      "Admin login",
-      "Lihat laporan pending",
-      "Approve -> status menjadi verified",
-      "Reject -> data dihapus"
-    ],
-    "public_display": [
-      "Ambil data dengan status verified",
-      "Tampilkan ke halaman list",
-      "Aktifkan search"
+      "id",
+      "nomor_hp",
+      "rekening_ewallet",
+      "nama_akun",
+      "nama_rekening",
+      "kronologi",
+      "foto",
+      "status",
+      "created_at"
     ]
   },
 
-  "security": {
-    "anti_spam": [
-      "captcha",
-      "limit submit per IP"
+  "workflow": {
+    "user": [
+      "Buka halaman list penipu",
+      "Cari data lewat search",
+      "Klik untuk melihat detail"
     ],
-    "legal": {
-      "disclaimer": "Data berdasarkan laporan pengguna dan bertujuan edukasi, bukan tuduhan hukum"
-    },
-    "file_security": [
-      "Validasi tipe file (jpg, png)",
-      "Limit ukuran file",
-      "Rename file random"
+    "admin_future": [
+      "Approve laporan",
+      "Ubah status verified",
+      "Kelola data"
     ]
   },
 
-  "future_features": [
-    "Filter berdasarkan bank / e-wallet",
-    "Sorting berdasarkan tanggal",
-    "Badge Verified Scam",
-    "Export PDF",
-    "API pencarian eksternal"
-  ]
+  "notes": {
+    "mobile": "Menggunakan overflow table + font scalable",
+    "backend_ready": "HTML siap di-loop dari database",
+    "security": "Wajib admin approval + disclaimer hukum"
+  }
 }
