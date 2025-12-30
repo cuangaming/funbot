@@ -1,0 +1,168 @@
+{
+  "project": {
+    "name": "List Penipu / Blacklist",
+    "description": "Sistem pencatatan dan pencarian laporan penipuan untuk website cuangaming",
+    "goal": [
+      "Menyediakan daftar penipu yang bisa dicari",
+      "Memberikan edukasi dan peringatan kepada user",
+      "Menyimpan bukti penipuan"
+    ]
+  },
+
+  "data_structure": {
+    "penipu": {
+      "id": "integer (auto increment)",
+      "nomor_hp": "string",
+      "rekening_atau_ewallet": "string",
+      "nama_akun": "string",
+      "nama_rekening": "string",
+      "kronologi": "text",
+      "foto_bukti": "string (path file)",
+      "status": "pending | verified",
+      "created_at": "timestamp"
+    }
+  },
+
+  "database": {
+    "mysql_table": {
+      "name": "penipu",
+      "sql": "CREATE TABLE penipu (id INT AUTO_INCREMENT PRIMARY KEY, nomor_hp VARCHAR(20), rekening VARCHAR(50), nama_akun VARCHAR(100), nama_rekening VARCHAR(100), kronologi TEXT, foto VARCHAR(255), status ENUM('pending','verified') DEFAULT 'pending', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
+    }
+  },
+
+  "pages": {
+    "list_page": {
+      "url": "/list-penipu",
+      "components": [
+        "search_input",
+        "table_list",
+        "detail_modal"
+      ]
+    },
+    "submit_page": {
+      "url": "/lapor-penipu",
+      "components": [
+        "submit_form",
+        "upload_foto"
+      ]
+    },
+    "admin_page": {
+      "url": "/admin/penipu",
+      "components": [
+        "table_pending",
+        "approve_button",
+        "delete_button"
+      ]
+    }
+  },
+
+  "frontend": {
+    "search_system": {
+      "type": "client-side",
+      "logic": "filter semua kolom berdasarkan input text",
+      "js_example": "Ambil input -> ubah lowercase -> cocokan ke text dalam setiap row"
+    },
+
+    "table_columns": [
+      "Nomor HP",
+      "Rekening / E-Wallet",
+      "Nama Akun",
+      "Nama Rekening",
+      "Kronologi (ringkas)",
+      "Bukti (thumbnail)"
+    ],
+
+    "modal_detail": {
+      "trigger": "klik row",
+      "content": [
+        "Nomor HP",
+        "Rekening / E-Wallet",
+        "Nama Akun",
+        "Nama Rekening",
+        "Kronologi lengkap",
+        "Foto bukti"
+      ]
+    }
+  },
+
+  "form_submit": {
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "fields": [
+      {
+        "name": "nomor_hp",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "rekening",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "nama_akun",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "nama_rekening",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "kronologi",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "foto",
+        "type": "file",
+        "required": false
+      }
+    ],
+    "default_status": "pending"
+  },
+
+  "backend_flow": {
+    "submit_report": [
+      "User isi form",
+      "Validasi input",
+      "Upload foto ke folder /uploads",
+      "Simpan data ke database dengan status pending"
+    ],
+    "admin_verification": [
+      "Admin login",
+      "Lihat laporan pending",
+      "Approve -> status menjadi verified",
+      "Reject -> data dihapus"
+    ],
+    "public_display": [
+      "Ambil data dengan status verified",
+      "Tampilkan ke halaman list",
+      "Aktifkan search"
+    ]
+  },
+
+  "security": {
+    "anti_spam": [
+      "captcha",
+      "limit submit per IP"
+    ],
+    "legal": {
+      "disclaimer": "Data berdasarkan laporan pengguna dan bertujuan edukasi, bukan tuduhan hukum"
+    },
+    "file_security": [
+      "Validasi tipe file (jpg, png)",
+      "Limit ukuran file",
+      "Rename file random"
+    ]
+  },
+
+  "future_features": [
+    "Filter berdasarkan bank / e-wallet",
+    "Sorting berdasarkan tanggal",
+    "Badge Verified Scam",
+    "Export PDF",
+    "API pencarian eksternal"
+  ]
+}
