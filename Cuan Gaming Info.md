@@ -12,7 +12,7 @@ by Cuan Gaming
 ➜ https://t.me/cuangamingbot
 
 🌐 Website
-➜ www.cuangaming.store
+➜ cuangaming.com
 
 💬 Discord Channel
 ➜ https://discord.gg/zKFNqnRdkV
